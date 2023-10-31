@@ -34,6 +34,17 @@ const { createApp } = Vue
         const index = this.toDoList.findIndex((el)=>el.id === ident)
         //console.log(index);
         this.toDoList.splice(index,1)
+      },
+      addItem(){
+        this.lastId++;
+        const newItem ={
+          text: this.newItemList,
+          done:false,
+          id:this.lastId
+
+        }
+        this.toDoList.unshift(newItem);
+        this.newItemList='';
       }
     }
   }).mount('#app')
