@@ -31,7 +31,8 @@ const { createApp } = Vue
     },
     methods:{
       removeItem(ident){
-        const index = this.toDoList.findIndex((el)=>el.id === ident)
+        const index = this.findElement(ident, this.toDoList)
+        //const index = this.toDoList.findIndex((el)=>el.id === ident)
         //console.log(index);
         this.toDoList.splice(index,1)
       },
@@ -46,9 +47,14 @@ const { createApp } = Vue
         this.toDoList.unshift(newItem);
         this.newItemList='';
       },
-      itemDone(obj){
-        obj.done=!obj.done
+      itemDone(ident){
+        const index= this.findElement(ident, this.toDoList);
+        this.toDoList[index].done= !this.toDoList[index].done;
+        //obj.done=!obj.done
         //console.log('item done')
+      },
+      findElement(ident, array){
+        return array.findIndex(el=> el.id === ident);
       }
     }
   }).mount('#app')

@@ -31,7 +31,7 @@
       <button class="btn btn-outline-danger" type="button" id="button-addon2" @click="addItem">Add new item</button>
     </div>
     <ul class="list-group" v-if="toDoList.length>0">
-      <li :class="['list-group-item', 'd-flex', 'justify-content-between']" :id="item.id" v-for="(item, index) in toDoList"><span :class="{'done':item.done}" @click="itemDone(item)">{{item.text}}</span>  <i class="fa-solid fa-xmark" @click="removeItem(item.id)"></i></li>
+      <li class="list-group-item d-flex justify-content-between" :id="item.id" v-for="(item, index) in toDoList"><span :class="{'done':item.done}" @click="itemDone(item.id)">{{item.text}}</span>  <i class="fa-solid fa-xmark" @click="removeItem(item.id)"></i></li>
       
     </ul>
     <div class="bg-warning rounded-2 empty-list d-flex align-items-center justify-content-center" v-else>
