@@ -45,6 +45,10 @@ const { createApp } = Vue
         }
         this.toDoList.unshift(newItem);
         this.newItemList='';
+      },
+      itemDone(obj){
+        obj.done=!obj.done
+        //console.log('item done')
       }
     }
   }).mount('#app')

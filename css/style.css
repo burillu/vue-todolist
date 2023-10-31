@@ -7,3 +7,6 @@ header img{
 .empty-list{
     height: 100px;
 }
+li span {
+    cursor: pointer;
+}
