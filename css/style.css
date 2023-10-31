@@ -4,3 +4,6 @@ header img{
 .done{
     text-decoration: line-through;
 }
+.empty-list{
+    height: 100px;
+}

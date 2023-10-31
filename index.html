@@ -34,8 +34,8 @@
       <li :class="['list-group-item', 'd-flex', 'justify-content-between']" :id="item.id" v-for="(item, index) in toDoList"><span :class="{'done':item.done}">{{item.text}}</span>  <i class="fa-solid fa-xmark" @click="removeItem(item.id)"></i></li>
       
     </ul>
-    <div class="bg-warning" v-else>
-      Non Sono presenti oggetti all'interno della lista
+    <div class="bg-warning rounded-2 empty-list d-flex align-items-center justify-content-center" v-else>
+      <span class="">Non Sono presenti oggetti all'interno della lista</span>
     </div>
       </div>
     </div>
