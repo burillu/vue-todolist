@@ -25,10 +25,15 @@ const { createApp } = Vue
           
         ],
         lastId:3,
+        newItemList:''
 
       }
     },
     methods:{
-      
+      removeItem(ident){
+        const index = this.toDoList.findIndex((el)=>el.id === ident)
+        //console.log(index);
+        this.toDoList.splice(index,1)
+      }
     }
   }).mount('#app')

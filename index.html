@@ -27,13 +27,16 @@
       <div class="col-6">
         <h1 class="text-center">to-do-list</h1>
     <div class="input-group mb-3">
-      <input type="text" class="form-control" placeholder="Add to-do-list item" aria-label="Recipient's username" aria-describedby="button-addon2">
-      <button class="btn btn-outline-danger" type="button" id="button-addon2">Button</button>
+      <input type="text" class="form-control" placeholder="Add to-do-list item" aria-label="Recipient's username" aria-describedby="button-addon2" v-model="newItemList">
+      <button class="btn btn-outline-danger" type="button" id="button-addon2">Add new item</button>
     </div>
-    <ul class="list-group">
-      <li :class="['list-group-item', 'd-flex', 'justify-content-between']" :id="item.id" v-for="(item, index) in toDoList"><span :class="{'done':item.done}">{{item.text}}</span>  <i class="fa-solid fa-xmark"></i></li>
+    <ul class="list-group" v-if="toDoList.length>0">
+      <li :class="['list-group-item', 'd-flex', 'justify-content-between']" :id="item.id" v-for="(item, index) in toDoList"><span :class="{'done':item.done}">{{item.text}}</span>  <i class="fa-solid fa-xmark" @click="removeItem(item.id)"></i></li>
       
     </ul>
+    <div class="bg-warning" v-else>
+      Non Sono presenti oggetti all'interno della lista
+    </div>
       </div>
     </div>
     
